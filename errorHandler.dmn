@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:camunda="http://camunda.org/schema/1.0/dmn" id="Definitions_0n7c47u" name="DRD" namespace="http://camunda.org/schema/1.0/dmn" exporter="Camunda Modeler" exporterVersion="3.0.1">
+  <decision id="oeErrorHandler" name="ErrorHandler">
+    <decisionTable id="decisionTable_1" hitPolicy="RULE ORDER">
+      <input id="input_1" label="flowName" camunda:inputVariable="flowName">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>flowName</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0h270xk" label="stepName" camunda:inputVariable="stepName">
+        <inputExpression id="LiteralExpression_0r1vlnc" typeRef="string">
+          <text>stepName</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1pkvtbr" label="errorCategory" camunda:inputVariable="errorCategory">
+        <inputExpression id="LiteralExpression_0e1oeai" typeRef="string">
+          <text>errorCategory</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="handlerChain" name="handlerChain" typeRef="string">
+        <outputValues id="UnaryTests_1wp1e65">
+          <text></text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_00nq95v" label="action" name="action" typeRef="string">
+        <outputValues id="UnaryTests_0jdbi3y">
+          <text>"JUMP_TO","CONTINUE"</text>
+        </outputValues>
+      </output>
+      <output id="OutputClause_1w96zhs" label="jump2Step" name="jump2Step" typeRef="string" />
+      <output id="OutputClause_0s33ckz" label="clientErrorCode" name="clientErrorCode" typeRef="string" />
+      <output id="OutputClause_0gvgkbw" label="clientErrorMessage" name="clientErrorMessage" typeRef="string" />
+      <rule id="DecisionRule_00gpxyp">
+        <inputEntry id="UnaryTests_1fips4r">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_097fx15">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yo4nie">
+          <text>"INVALID_SERIAL_NUMBER"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12w6b3k">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1p69gac">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1cns7of">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1fpt824">
+          <text>"400"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gbxzz8">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_159vu1t">
+        <inputEntry id="UnaryTests_0iyjd0w">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_085lwkv">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_12mttym">
+          <text>"INVALID_ZIPCODE"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1onxjds">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_04cthiz">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1yyhiuz">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qw8p9g">
+          <text>"400"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0sxa5kn">
+          <text>"Invalid Zip Code"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1wjbbw6">
+        <inputEntry id="UnaryTests_10iavf4">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0vnwhfd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hxptsx">
+          <text>"INVALID_ADDRESS_INFO"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0w6s9h8">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1rhwfb1">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1eh6mbo">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_06jyugw">
+          <text>"400"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0q1jde9">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1ylk0ma">
+        <inputEntry id="UnaryTests_1uzs84h">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b2jzcq">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gengcx">
+          <text>"ORDER_FAILURE"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ydqcka">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tk4gll">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1kqfe6p">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_12rry1y">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0eznryc">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0g4yu49">
+        <inputEntry id="UnaryTests_1ukj9of">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14ux4ki">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dn3yua">
+          <text>"FAILED_PAYMENT"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1kxmaid">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1tcr9x0">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mo4pn1">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1lhk70j">
+          <text>"400"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_10pxrhj">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_024iind">
+        <inputEntry id="UnaryTests_0fbq58z">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14qqjwj">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xetpja">
+          <text>"INELIGIBLE_FOR_PORT"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18fpoq1">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1da12fn">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0mjvwoh">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_05rim8l">
+          <text>"400"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ppamgy">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_001i9uu">
+        <inputEntry id="UnaryTests_1e88nm1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_064x7q2">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1op8w04">
+          <text>"PORTIN_DELAYED_OR_RESOLUTION_REQUIRED"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0b2h4im">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0gx4s9t">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1k1wf8n">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qaj1g1">
+          <text>"409"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0bctc6d">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0awryzi">
+        <inputEntry id="UnaryTests_1ycwaxg">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02qphvd">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07eoq89">
+          <text>"SUBMIT_NOT_ALLOWED"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0zndrna">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ynzjwx">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0d4e59b">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0a6dwwn">
+          <text>"400"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x0qfl4">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jbjix3">
+        <inputEntry id="UnaryTests_1w7poql">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1j4wofk">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1di32s0">
+          <text>"ACCOUNT_NOT_ACTIVATED"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1r34wjm">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_172aou6">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0ntpdqg">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0379087">
+          <text>"400"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1pmch7s">
+          <text>"Account not Activated - Ineligible for payment"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0x5n116">
+        <inputEntry id="UnaryTests_0yfunkt">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16k6hg4">
+          <text>"validateAddress"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_065ue91">
+          <text>"500"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0fe1g41">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0x172cl">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1mo7iic">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1qcw7x8">
+          <text>"400"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0138qlh">
+          <text>"Internal Server Error due to bad request"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1f4h2k9">
+        <inputEntry id="UnaryTests_1pt90cy">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0l3pjrm">
+          <text>"checkEligibility"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ld9o1z">
+          <text>"400"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07f9nwt">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_159s9la">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ebv68s">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_16tabeq">
+          <text>"400"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1f1uxcq">
+          <text>"Invalid input"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1bx2cov">
+        <inputEntry id="UnaryTests_062qamm">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_11a0wqw">
+          <text>"sendSMS"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cedzxx">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0sfnd71">
+          <text>"AffiliateChannelServicesFalloutCreator"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0hj6k57">
+          <text>"CONTINUE"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0vnd10m">
+          <text>"submitOrderResponse"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0w1odi5">
+          <text></text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1i17xs8">
+          <text></text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_15s2yo8">
+        <inputEntry id="UnaryTests_0shjs09">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_166bp1l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0de4dhn">
+          <text>"DAS_FAILURE"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0uwx7re">
+          <text>"AffiliateChannelServicesFalloutCreator"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ginmab">
+          <text>"JUMP_TO"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_0qa6q8c">
+          <text>"end"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1s5aiwc">
+          <text>"500"</text>
+        </outputEntry>
+        <outputEntry id="LiteralExpression_1ucvdux">
+          <text>"Db Failure"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
